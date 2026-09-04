@@ -24,6 +24,7 @@ __pycache__/
 *.gitkeep
 *.mkv
 *.webm
+.vscode/
 
 
 # Distribution / packaging
