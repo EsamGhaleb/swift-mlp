@@ -10,7 +10,7 @@ The requirements for this repository are in the parent directory: `../requiremen
 ## Usage
 
 ### MediaPipe Pose Extraction
-First, we will have a demonstration of how to use MediaPipe to extract poses from a video. This will be done using the [Mediapipe_Pose_Tutorial.ipynb](Mediapipe_Pose_Tutorial.ipynb) notebook. The notebook also contains instructions on how to run it as well as exercises to practice extracting poses from your own videos/webcam. 
+First, we will have a demonstration of how to use MediaPipe to extract poses from a video. This will be done using the [Mediapipe_Pose_Tutorial.ipynb](../Tutorial_1_Pose_Estimation_with_MediaPipe/Mediapipe_Pose_Tutorial.ipynb) notebook. The notebook also contains instructions on how to run it as well as exercises to practice extracting poses from your own videos/webcam. 
 
 ### Gesture Segmentation
 Next, we will segment gestures using the extracted subset poses. The segmentation is based on a model trained on the CABB dataset. The model is available in the `segmentation_models` directory.
