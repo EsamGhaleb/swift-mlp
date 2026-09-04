@@ -1,85 +1,148 @@
-# MMSYM 2026 Workshop on Semi-Automated Workflows for Facilitating Multimodal Language Processing (SWiFT-MLP) - Esam Ghaleb & Sho Akamine
+# SWiFT-MLP — Semi-Automated Workflows for Facilitating Multimodal Language Processing
 
-SWiFT-MLP: Semi-Automated Workflows for Facilitating Multimodal Language Processing is a hands-on workshop on practical, reproducible workflows for analyzing multimodal communication.
+**MMSYM 2026 workshop · Leuven, Belgium · 8 September 2026**
+Organised by [Esam Ghaleb](https://esamghaleb.github.io/) & Sho Akamine (Max Planck Institute for Psycholinguistics)
 
-It is designed for researchers and students working with audio/video data who want to use new technology to facilitate speech/gesture annotation and analyze gesture kinematics.
+SWiFT-MLP is a hands-on, **one-day** workshop on practical, reproducible workflows for analysing multimodal
+communication. It is designed for researchers and students working with audio/video data who want to use new
+technology to facilitate speech and gesture annotation and to analyse gesture kinematics.
 
-Building on the earlier MEDAL workshop on automatic processing of multimodal interaction, SWiFT-MLP introduces semi-automated pipelines to:
+Building on the earlier MEDAL workshop on automatic processing of multimodal interaction, SWiFT-MLP walks
+through a complete semi-automated pipeline — from raw video to a multimodal analysis — in four tutorials:
 
-   - automatically extract body keypoints using MediaPipe
-   - automatically segment manual gestures
-   - automatically transcribe speech using WhisperX
-   - export annotations to common analysis tools (e.g., Praat, ELAN)
-   - compare signals across modalities (e.g., speech, gesture) and analyze gesture kinematics
+- automatically extract body keypoints using **MediaPipe**
+- automatically segment manual **gestures**
+- automatically transcribe speech using **WhisperX** and export to **ELAN**
+- compare signals across modalities (speech, gesture) and analyse **gesture representations**
 
-The workshop is especially well-suited to the MMSYM community, bringing together perspectives from multimodal communication, linguistics, NLP, computer vision, and cognitive science. It aims to support researchers who need robust, transparent, and reusable workflows for studying embodied communication in interaction.
+The workshop is especially well suited to the MMSYM community, bringing together perspectives from multimodal
+communication, linguistics, NLP, computer vision, and cognitive science. It aims to support researchers who need
+robust, transparent, and reusable workflows for studying embodied communication in interaction.
+
+---
+
+## Schedule
+
+One day, four tutorials: **two in the morning, two in the afternoon**.
+Full schedule: <https://swift-mlp.github.io/2026/#schedule>
+
+| Time | Session | Tutorial |
+|------|---------|----------|
+| 09:30–09:45 | Welcome and introduction | — |
+| 09:45–10:45 | Setup of the environment (VS Code, Miniconda) | — |
+| 10:45–11:00 | ☕ Break | |
+| **11:00–11:45** | **Pose estimation using MediaPipe** | **Tutorial 1** |
+| **11:45–13:00** | **Automatic gesture segmentation** | **Tutorial 2** |
+| 13:00–14:00 | 🍽 Lunch | |
+| **14:00–15:00** | **Automatic speech transcription using WhisperX** | **Tutorial 3** |
+| **15:00–15:45** | **Exporting transcripts into ELAN** | **Tutorial 3** |
+| 15:45–16:15 | ☕ Break | |
+| **16:15–17:30** | **Multimodal similarity analysis (kinematics + speech)** | **Tutorial 4** |
+| 17:30–18:00 | Discussion, wrap-up, and next steps | — |
+
+## The four tutorials
+
+Each tutorial is a self-contained folder with its own notebook(s) and data. They form a pipeline — the output of
+one is the input of the next — but each can also be run on its own.
+
+### 🌅 Morning
+
+| Folder | What you do | Out |
+|--------|-------------|-----|
+| [`Tutorial_1_Pose_Estimation_with_MediaPipe/`](Tutorial_1_Pose_Estimation_with_MediaPipe) | Run MediaPipe over video to track body, hand and face landmarks; inspect and visualise the resulting kinematics | Per-participant keypoint arrays |
+| [`Tutorial_2_Gesture_Segmentation/`](Tutorial_2_Gesture_Segmentation) | Turn keypoints into motion features and detect gesture strokes automatically; export the segments for manual checking | Gesture segments (ELAN-ready) |
+
+### 🌆 Afternoon
+
+| Folder | What you do | Out |
+|--------|-------------|-----|
+| [`Tutorial_3_Speech_Transcription_with_WisperX/`](Tutorial_3_Speech_Transcription_with_WisperX) | Transcribe and force-align speech with WhisperX, then export word- and utterance-level tiers into ELAN (and Praat) | Time-aligned transcripts |
+| [`Tutorial_4_Multimodal_Similarity_Analysis/`](Tutorial_4_Multimodal_Similarity_Analysis) | Encode gestures with a self-supervised skeleton model and speech with Dutch BERT; compare gestures within and across speakers and dialogues | Gesture/speech embeddings + similarity analyses |
+
+Tutorial 4 has its own [README](Tutorial_4_Multimodal_Similarity_Analysis/README.md) with details on the data and
+the pretrained model.
+
 ## Prerequisites
-- **Level**: Suitable for anyone interested in multimodal interaction.  
-- **Skills**: Basic programming ability, preferably in [Python](https://www.python.org/).
+
+- **Level**: suitable for anyone interested in multimodal interaction.
+- **Skills**: basic programming ability, preferably in [Python](https://www.python.org/).
+- **Hardware**: a laptop is enough; a GPU is optional (everything runs on CPU, just slower).
 
 ## Software
-We will use the following tools; no installation required beforehand—we’ll set them up during the workshop:
-- [Visual Studio Code](https://code.visualstudio.com/)
+
+We use the tools below. Nothing has to be installed in advance — we set everything up in the first session —
+but installing VS Code, Miniconda and ELAN beforehand saves time.
+
+- [Visual Studio Code](https://code.visualstudio.com/) (+ the Python and Jupyter extensions)
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (Python environment manager)
 - [MediaPipe](https://mediapipe.dev/) (kinematic feature extraction)
-- [whisperX](https://github.com/m-bain/whisperX) (automated speech transcription & alignment)
+- [WhisperX](https://github.com/m-bain/whisperX) (automated speech transcription & alignment)
 - [ELAN](https://archive.mpi.nl/tla/elan) (annotation tool for multimodal data)
 
-## Schedule: https://swift-mlp.github.io/2026/#schedule
+## Installation & setup
 
-## Download the workshop data and code
-You can download the workshop data and code from the GitHub repository: https://github.com/EsamGhaleb/swift-mlp
+### 1. Get the materials
 
-## Installation & Setup Instructions
+```bash
+git clone https://github.com/EsamGhaleb/swift-mlp.git
+cd swift-mlp
+```
 
-Follow these steps to set up the environment and install required packages.
+(Or download the ZIP from the [repository page](https://github.com/EsamGhaleb/swift-mlp) and unzip it.)
 
-### 1. Install Visual Studio Code and Miniconda
-
-In the first half hour of the workshop, we will set up the environment and install the necessary software. If you want to prepare in advance, you can install the following software:
-
-- **Visual Studio Code**: Download and install from [here](https://code.visualstudio.com/).
-   - After installation, install the Python extension for Visual Studio Code.
-   - Install the Jupyter extension for running Jupyter notebooks 
-- **Miniconda**: Download and install from [here](https://docs.conda.io/en/latest/miniconda.html).
-   - Follow the instructions for your operating system to install Miniconda.
-   - After installation, open a terminal and run `conda init` to set up your shell for Conda.
-- **ELAN**: Download and install from [here](https://archive.mpi.nl/tla/elan). 
-   - ELAN is a tool for annotating multimodal data throughout the workshop.
-
-Please note that you do not need to install **MediaPipe** or **whisperX** beforehand; we will install them during the workshop.
-  
 ### 2. Create and activate a Conda environment
 
 ```bash
-conda create --name medal python=3.10 
+conda create --name swift-mlp python=3.10
+conda activate swift-mlp
 ```
-This command creates a new Conda environment named `medal` with Python version 3.10. Make sure that you use Python 3.10, as some packages may not be compatible with later versions.
-After creating the environment, you need to activate it. Run the following command in your terminal:
-```bash  
-conda activate medal
-```
-### 3. Install required packages
-Go into the workshop directory. You can install the required packages using the provided `requirements.txt` file. This file contains all the necessary dependencies for the workshop.
-Make sure you are in the `medal` Conda environment, then run the following command in your terminal:
+
+Use **Python 3.10** — several packages are not yet compatible with later versions. (The environment name is
+yours to choose; earlier materials used `medal`.)
+
+### 3. Install the required packages
+
+From the workshop directory, with the environment active:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Reinstall ffmpeg package
-If you encounter issues with the `ffmpeg` package, you can reinstall it using Conda. Run the following command in your terminal:
+### 4. If ffmpeg gives trouble
+
 ```bash
 conda install -c conda-forge ffmpeg
 ```
 
-## Workshop Materials
-You can open the workshop materials in Visual Studio Code. In the interface of Visual Studio Code:
+### 5. Extra packages for Tutorial 4 (only if you re-read the raw annotations)
 
-- From the file explorer, open the project folder and select Day 1
-  - In the Day 1 folder, you will find the Jupyter notebooks for **Extracting body key points** and **Segmenting Gestures**.
-- From the file explorer, open the project folder and select Day 2
-  - In the Day 2 folder, you will find the Jupyter notebooks for **Speech Transcription** and **Multimodal Similarity Analysis**.
+```bash
+pip install pympi-ling spacy
+python -m spacy download nl_core_news_sm
+```
 
+The tutorial ships a pre-computed table of embeddings, so these are only needed if you rebuild it from the ELAN
+files and transcripts. See the [Tutorial 4 README](Tutorial_4_Multimodal_Similarity_Analysis/README.md).
 
-For any questions or further information, please contact:
-- Esam Ghaleb: [esamghaleb.github.io](https://esamghaleb.github.io/)
+## Running the notebooks
+
+Open the workshop folder in Visual Studio Code, then open the notebook inside the tutorial folder for the current
+session and select the `swift-mlp` environment as the kernel (top right of the notebook). Run the cells from top
+to bottom; every notebook is meant to be read as much as executed.
+
+## Background reading
+
+- Ghaleb, E., Burenko, I., Rasenberg, M., Pouw, W., Toni, I., Uhrig, P., Wilson, A., Holler, J., Özyürek, A., &
+  Fernández, R. (2024). *Learning Co-Speech Gesture Representations in Dialogue through Contrastive Learning: An
+  Intrinsic Evaluation.* ICMI '24. <https://doi.org/10.1145/3678957.3685707>
+- Ghaleb, E., et al. (2025). *I See What You Mean: Co-Speech Gestures for Reference Resolution in Multimodal
+  Dialogue.*
+- Akamine, S., Meyer, A. S., & Özyürek, A. *Lexical alignment and speaker visibility influence gestural alignment
+  in conversation* (manuscript) — the video-mediated corpus used in Tutorial 4.
+
+## Contact
+
+Questions, or something not working? Get in touch:
+
+- Esam Ghaleb — [esamghaleb.github.io](https://esamghaleb.github.io/)
+- Sho Akamine — Max Planck Institute for Psycholinguistics
