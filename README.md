@@ -111,13 +111,12 @@ pip install -r requirements.txt
 ### 4. If ffmpeg gives trouble
 
 ```bash
-conda install -c conda-forge ffmpeg
+conda install -c conda-forge ffmpeg sox
 ```
 
 ### 5. Extra packages for Tutorial 4 (only if you re-read the raw annotations)
 
 ```bash
-pip install pympi-ling spacy
 python -m spacy download nl_core_news_sm
 ```
 

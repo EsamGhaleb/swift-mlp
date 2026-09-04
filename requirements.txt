@@ -1,39 +1,56 @@
-lightning
-matplotlib
-nltk
-numpy
-opencv_python
-opencv_python_headless
-pandas
-pytorch_lightning
-PyYAML
-scikit_learn
-scipy
-seaborn
-speach
-statannotations
-statsmodels
-tabulate
-torch
-torchaudio
-torchvision
-tqdm
-transformers
-EasyDict
-mediapipe
-pandas
-ffmpeg
-ffmpeg-python
-sox
-soundfile
-datetime
-whisperx
-whisper
-moviepy==1.0.3
-jupyter
-deepl
-tgt
-elan_data
-python-Levenshtein
-gdown
-# spacy
+# NOTE on MediaPipe: 0.10.21 still has the classic `mp.solutions` API. This mediapipe version requires (`numpy<2`)
+
+# --- the version all packages agrees on -----------------------------------
+numpy==1.26.4
+
+# --- core ---------------------------------------------------
+pandas==2.3.0
+scipy==1.15.3
+scikit_learn==1.7.0
+matplotlib==3.10.3
+seaborn==0.13.2
+statsmodels==0.14.4
+statannotations==0.7.2
+tabulate==0.9.0
+tqdm==4.67.1
+PyYAML==6.0.2
+EasyDict==1.13
+jupyter==1.1.1
+
+# --- deep learning ------
+torch==2.7.1
+torchaudio==2.7.1
+torchvision==0.22.1
+pytorch_lightning==2.5.1.post0
+lightning==2.5.1.post0
+transformers==4.52.4
+
+
+# 0.10.21 is the last release with `mp.solutions`; it also pins numpy<2 and protobuf<5.
+mediapipe==0.10.21
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+opencv-contrib-python==4.11.0.86   # required by mediapipe; pinned so it stays numpy-1 compatible
+
+# --- Tutorials 2 & 3: audio, transcription, ELAN export ----------------------
+whisperx==3.3.1
+ctranslate2==4.4.0                 # whisperx allows <4.5; pinned to the version that works
+speechbrain==1.0.3                 
+whisper==1.1.10                    
+moviepy==1.0.3                     # works with numpy 1.x; it breaks on numpy 2
+soundfile==0.13.1
+sox==1.5.0                         # python wrapper
+ffmpeg-python==0.2.0
+ffmpeg==1.4                        # inert stub package, not the ffmpeg binary — kept to match the env
+speach==0.1a15.post1
+tgt==1.5
+elan_data==1.7.3
+python-Levenshtein==0.27.1
+deepl==1.22.0
+nltk==3.9.1
+datetime==5.5                      
+
+# --- Tutorial 4: multimodal similarity analysis ------------------------------
+spacy==3.8.7                       # was commented out; Tutorial 4 lemmatises the transcripts with it
+pympi-ling==1.71                   # reads the ELAN .eaf files in the Zoom notebook
+gdown==5.2.0                       # downloads the pretrained gesture encoder
