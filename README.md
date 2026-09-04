@@ -1,6 +1,18 @@
-# Methods for the automatic processing of multimodal interaction - Raquel Fernandez & Esam Ghaleb
-This workshop will introduce fundamental methods for analysing multimodal signals in conversation. On the first day, we will discuss how to process kinematic information (i.e., how to extract key body points) and automatically transcribe and align speech from dialogue video recordings. On the second day, we will build on this knowledge to develop methods that allow us to automatically detect gestures using speech and kinematic features. Each workshop day will consist of a short presentation of at most 45 minutes, followed by hands-on practical exercises and discussion.
+# MMSYM 2026 Workshop on Semi-Automated Workflows for Facilitating Multimodal Language Processing (SWiFT-MLP) - Esam Ghaleb & Sho Akamine
 
+SWiFT-MLP: Semi-Automated Workflows for Facilitating Multimodal Language Processing is a hands-on workshop on practical, reproducible workflows for analyzing multimodal communication.
+
+It is designed for researchers and students working with audio/video data who want to use new technology to facilitate speech/gesture annotation and analyze gesture kinematics.
+
+Building on the earlier MEDAL workshop on automatic processing of multimodal interaction, SWiFT-MLP introduces semi-automated pipelines to:
+
+   - automatically extract body keypoints using MediaPipe
+   - automatically segment manual gestures
+   - automatically transcribe speech using WhisperX
+   - export annotations to common analysis tools (e.g., Praat, ELAN)
+   - compare signals across modalities (e.g., speech, gesture) and analyze gesture kinematics
+
+The workshop is especially well-suited to the MMSYM community, bringing together perspectives from multimodal communication, linguistics, NLP, computer vision, and cognitive science. It aims to support researchers who need robust, transparent, and reusable workflows for studying embodied communication in interaction.
 ## Prerequisites
 - **Level**: Suitable for anyone interested in multimodal interaction.  
 - **Skills**: Basic programming ability, preferably in [Python](https://www.python.org/).
@@ -13,28 +25,10 @@ We will use the following tools; no installation required beforehand—we’ll s
 - [whisperX](https://github.com/m-bain/whisperX) (automated speech transcription & alignment)
 - [ELAN](https://archive.mpi.nl/tla/elan) (annotation tool for multimodal data)
 
-## Schedule
-### Day 1: Kinematic Analysis and Gesture Segmentation
-### Tuesday, 24 June 2024
-| Time          | Topic                                                                 |
-|---------------|-----------------------------------------------------------------------|
-| 14:00 - 14:05 | Introduction        |
-| 14:05 - 14:30 |Setup of the environment and tools (Visual Studio Code, Miniconda, MediaPipe, whisperX) |
-| 14:30 - 15:30 | Extracting body key points using MediaPipe                  |
-| 15:30 - 15:45 | Break                                                                 |
-| 15:45 - 17:00 | Gesture Segmentation and visualizing segmentation results in ELAN               |
-
-### Day 2: Speech Transcription and Multimodal Similarity Analysis
-### Wednesday, 25 June 2024
-| Time          | Topic                                                                 |
-|---------------|-----------------------------------------------------------------------|
-| 14:00 - 14:15 | Speech transcription using WhisperX                |
-| 14:15 - 15:30 | Hands-on: Exporting transcriptions into ELAN      |
-| 15:30 - 15:45 | Break                                                                 |
-| 15:45 - 17:00 | Multimodal similarity analysis using kinematic and speech features |
+## Schedule: https://swift-mlp.github.io/2026/#schedule
 
 ## Download the workshop data and code
-You can download the workshop data and code from the GitHub repository: https://github.com/EsamGhaleb/medal_workshop_on_multimodal_interaction
+You can download the workshop data and code from the GitHub repository: https://github.com/EsamGhaleb/swift-mlp
 
 ## Installation & Setup Instructions
 
