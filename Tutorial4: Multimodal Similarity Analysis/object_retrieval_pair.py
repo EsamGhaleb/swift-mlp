@@ -7,9 +7,9 @@ from scipy.spatial.distance import cdist
 from tqdm import tqdm
 
 # Imports from your project modules (adjust paths as needed)
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.prepare_gesture_referents_dataset import get_detailed_gestures
-from Multimodal_Similarity_Analysis_Tutorial.gestures_forms_sim import process_skeleton, get_bone, get_speech_waveform
-from Multimodal_Similarity_Analysis_Tutorial.data.read_process_poses import load_keypoints_dict
+from dialog_utils.prepare_gesture_referents_dataset import get_detailed_gestures
+from gestures_forms_sim import process_skeleton, get_bone, get_speech_waveform
+from data.read_process_poses import load_keypoints_dict
 
 def compute_topk_accuracies(retrieval_df, gestures_df, k_list=[1,2,3,4,5], skip_missing=True):
     # Dictionary to collect binary correctness for each k.

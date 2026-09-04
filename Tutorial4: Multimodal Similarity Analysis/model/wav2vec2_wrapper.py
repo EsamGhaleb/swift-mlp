@@ -5,7 +5,7 @@ import torchaudio
 import torch.nn as nn
 from pytorch_lightning import LightningModule
 from transformers import Wav2Vec2FeatureExtractor, Wav2Vec2Model
-from Multimodal_Similarity_Analysis_Tutorial.model.wav2vec2_cnn import CNN1D
+from model.wav2vec2_cnn import CNN1D
 
 
 class Wav2Vec2Wrapper(LightningModule):

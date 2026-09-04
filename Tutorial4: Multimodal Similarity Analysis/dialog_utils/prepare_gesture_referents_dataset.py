@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 import torch
 from tqdm import tqdm
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.read_labeled_and_pos_target_data import prepare_dialogue_shared_expressions_and_turns_info
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.data_classes import Turn, Gesture, Utterance
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.prepare_annotate_dialogues import get_gestures_info, get_turn_info
+from dialog_utils.read_labeled_and_pos_target_data import prepare_dialogue_shared_expressions_and_turns_info
+from dialog_utils.data_classes import Turn, Gesture, Utterance
+from dialog_utils.prepare_annotate_dialogues import get_gestures_info, get_turn_info
 
 
 def get_gestures_and_speech_info(turns_info):

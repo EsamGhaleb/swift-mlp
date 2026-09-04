@@ -4,13 +4,13 @@ import torch.nn.functional as F
 import sys
 sys.path.extend(['../'])
 
-from Multimodal_Similarity_Analysis_Tutorial.model.wav2vec2_wrapper import Wav2Vec2CNN
-from Multimodal_Similarity_Analysis_Tutorial.model.decouple_gcn_attn_sequential import Model as STGCN
-from Multimodal_Similarity_Analysis_Tutorial.model.DSTformer import DSTformer
-from Multimodal_Similarity_Analysis_Tutorial.model.CrossDSTformer import CrossDSTformer
-from Multimodal_Similarity_Analysis_Tutorial.model.model_object import ObjectNet
+from model.wav2vec2_wrapper import Wav2Vec2CNN
+from model.decouple_gcn_attn_sequential import Model as STGCN
+from model.DSTformer import DSTformer
+from CrossDSTformer import CrossDSTformer
+from model.model_object import ObjectNet
 from functools import partial
-from Multimodal_Similarity_Analysis_Tutorial.model.semantic_pool import BertjePoolingModule
+from model.semantic_pool import BertjePoolingModule
 
 weights_path = '27_2_finetuned/joint_finetuned.pt'
 

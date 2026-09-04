@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-from Multimodal_Similarity_Analysis_Tutorial.model.attentive_pooler import AttentivePooler
+from model.attentive_pooler import AttentivePooler
 
 
 class ObjectHeadClassification(nn.Module):

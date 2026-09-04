@@ -4,12 +4,12 @@ from collections import defaultdict
 import torch
 import torch.optim as optim
 from pytorch_lightning import LightningModule
-from Multimodal_Similarity_Analysis_Tutorial.model.losses import NTXent, NTXentMM
-from Multimodal_Similarity_Analysis_Tutorial.model.semantic_pool import BertjePoolingModule
+from model.losses import NTXent, NTXentMM
+from model.semantic_pool import BertjePoolingModule
 from lib.model.model_object import ObjectNet
-from Multimodal_Similarity_Analysis_Tutorial.model.decouple_gcn_attn_sequential import Model as STGCN
+from model.decouple_gcn_attn_sequential import Model as STGCN
 from transformers import AutoTokenizer, AutoModel
-from Multimodal_Similarity_Analysis_Tutorial.model.wav2vec2_wrapper import Wav2Vec2CNN
+from model.wav2vec2_wrapper import Wav2Vec2CNN
 weights_path = '27_2_finetuned/joint_finetuned.pt'
 
 from lib.model.loss import (

@@ -25,6 +25,7 @@ __pycache__/
 *.mkv
 *.webm
 .vscode/
+*.ckpt
 
 
 # Distribution / packaging

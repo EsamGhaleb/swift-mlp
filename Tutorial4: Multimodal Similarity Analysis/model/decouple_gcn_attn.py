@@ -4,8 +4,8 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 import numpy as np
 import math
-from Multimodal_Similarity_Analysis_Tutorial.model.dropSke import DropBlock_Ske
-from Multimodal_Similarity_Analysis_Tutorial.model.dropT import DropBlockT_1d
+from model.dropSke import DropBlock_Ske
+from model.dropT import DropBlockT_1d
 
 
 def import_class(name):

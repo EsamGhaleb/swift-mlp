@@ -4,7 +4,7 @@ import torch.nn as nn
 from transformers import AutoTokenizer, AutoModel
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
 
-from Multimodal_Similarity_Analysis_Tutorial.model.attentive_pooler import AttentivePooler
+from model.attentive_pooler import AttentivePooler
 
 
 class BertjePoolingModule(LightningModule):

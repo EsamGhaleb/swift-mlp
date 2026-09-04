@@ -10,8 +10,8 @@ import pickle
 import numpy as np
 from whisperx.audio import load_audio
 import whisperx
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.align_speech_time_wise import align
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.data_classes import Tier, Turn, Utterance, Gesture 
+from dialog_utils.align_speech_time_wise import align
+from dialog_utils.data_classes import Tier, Turn, Utterance, Gesture 
 
 
 import torch

@@ -13,12 +13,12 @@ max_body_true = 1
 from tqdm import tqdm
 # import model from ../model
 import sys
-from Multimodal_Similarity_Analysis_Tutorial.model.skeleton_speech_models import GSSModel
+from model.skeleton_speech_models import GSSModel
 # computer the correlation between similarity_score and skeleton_feats_sim
 from scipy.stats import pearsonr, spearmanr
 import seaborn as sns
 import matplotlib.pyplot as plt
-from Multimodal_Similarity_Analysis_Tutorial.data.read_process_poses import load_keypoints_dict, get_bone
+from data.read_process_poses import load_keypoints_dict, get_bone
 
 
 def plot_boxenplot(gestures_form,   x = 'similarity_score', y = 'skeleton_feats_similarity'):

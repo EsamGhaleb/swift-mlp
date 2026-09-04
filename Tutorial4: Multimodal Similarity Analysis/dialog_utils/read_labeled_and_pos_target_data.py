@@ -10,8 +10,8 @@ import math
 import pickle
 import re 
 from collections import defaultdict, Counter
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.data_classes import Turn, Utterance, Gesture
-from Multimodal_Similarity_Analysis_Tutorial.dialog_utils.prepare_annotate_dialogues import get_gestures_info, get_turn_info
+from dialog_utils.data_classes import Turn, Utterance, Gesture
+from dialog_utils.prepare_annotate_dialogues import get_gestures_info, get_turn_info
 
 def load_pickle(file_name):
    with open(file_name, 'rb') as reader:

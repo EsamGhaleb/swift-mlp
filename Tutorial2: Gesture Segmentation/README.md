@@ -1,8 +1,6 @@
 # Extracting MediaPipe Poses and Segmenting Gestures
 
-## Gesture Segmentation Repository
-
-This repository contains resources and scripts necessary segment gestures using skeletal models based on MediaPipe poses. It is part of the MEDAL workshop on multimodal interaction.
+This folder contains resources and scripts necessary segment gestures using skeletal models based on MediaPipe poses.
 
 
 ## Getting Started
