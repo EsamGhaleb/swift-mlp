@@ -21,7 +21,6 @@ __pycache__/
 *.npy
 *.mp4
 *.DS_Store
-*.gitkeep
 *.mkv
 *.webm
 .vscode/
