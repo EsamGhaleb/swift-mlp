@@ -3,8 +3,8 @@ import os
 import copy
 
 # import custom-made functions
-from Speech_Transcription_Whisperx_Toturial.utils.time_format_converter import convert_string_to_float
-from Speech_Transcription_Whisperx_Toturial.utils.tsv_export import get_last_phoneme_timestamp
+from utils.time_format_converter import convert_string_to_float
+from utils.tsv_export import get_last_phoneme_timestamp
 
 
 def safe_time(value):
@@ -40,8 +40,10 @@ def get_tiers(result, sentence_tier, word_tier, puncts, word_spacing):
             text = word_info.get("word", "")
             raw_start = word_info.get("start")
             # get the end via phoneme timestamp
-            raw_end_str = get_last_phoneme_timestamp(segment, word_info, puncts)
-            raw_end = convert_string_to_float(raw_end_str) if raw_end_str is not None else None
+            raw_end_str = get_last_phoneme_timestamp(
+                segment, word_info, puncts)
+            raw_end = convert_string_to_float(
+                raw_end_str) if raw_end_str is not None else None
 
             start = safe_time(raw_start)
             end = safe_time(raw_end)
@@ -52,7 +54,8 @@ def get_tiers(result, sentence_tier, word_tier, puncts, word_spacing):
                 continue
 
             # add word interval
-            word_tier.add_interval(tgt.Interval(start_time=start, end_time=end, text=text))
+            word_tier.add_interval(tgt.Interval(
+                start_time=start, end_time=end, text=text))
 
             # build sentence-level utterance
             if not utterance:
@@ -68,7 +71,8 @@ def get_tiers(result, sentence_tier, word_tier, puncts, word_spacing):
                 sent_text = word_space.join(utterance)
                 # add sentence interval
                 sentence_tier.add_interval(
-                    tgt.Interval(start_time=utter_start, end_time=last_phoneme_end, text=sent_text)
+                    tgt.Interval(start_time=utter_start,
+                                 end_time=last_phoneme_end, text=sent_text)
                 )
                 # reset for next
                 utterance = []
@@ -85,11 +89,14 @@ def export_transcript_as_textgrid(result, filename, output_folder, puncts, word_
         return
 
     tg = tgt.TextGrid()
-    sentence_tier = tgt.IntervalTier(start_time=0.0, end_time=final_end, name="sentence")
-    word_tier     = tgt.IntervalTier(start_time=0.0, end_time=final_end, name="word")
+    sentence_tier = tgt.IntervalTier(
+        start_time=0.0, end_time=final_end, name="sentence")
+    word_tier = tgt.IntervalTier(
+        start_time=0.0, end_time=final_end, name="word")
 
     # fill tiers
-    sentence_tier, word_tier = get_tiers(result, sentence_tier, word_tier, puncts, word_spacing)
+    sentence_tier, word_tier = get_tiers(
+        result, sentence_tier, word_tier, puncts, word_spacing)
 
     # assemble and write
     tg.add_tier(sentence_tier)
@@ -101,4 +108,4 @@ def export_transcript_as_textgrid(result, filename, output_folder, puncts, word_
     output_path = os.path.join(textgrid_dir, output_name)
 
     tgt.write_to_file(tg, output_path, format="short")
-    print(f"Wrote TextGrid to {output_path}")
+    # print(f"Wrote TextGrid to {output_path}")
