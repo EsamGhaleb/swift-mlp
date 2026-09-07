@@ -10,7 +10,7 @@ __pycache__/
 *.pyc
 *.npy
 *.pkl
-*.mp4
+# *.mp4
 *.wav
 *.bin 
 *.jpeg
@@ -19,10 +19,10 @@ __pycache__/
 *.pth
 *.pfsx
 *.npy
-*.mp4
+# *.mp4
 *.DS_Store
 *.mkv
-*.webm
+# *.webm
 .vscode/
 *.ckpt
 
